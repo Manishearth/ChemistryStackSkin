@@ -1,0 +1,23 @@
+{
+  "name": "Skin for Chemistry Stack Exchange",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "A skin for Chemistry Stack Exchange",
+  "content_scripts": [
+    {
+      "matches": ["http://chemistry.stackexchange.com/*"],
+      "css": ["main.css"],
+      "js": ["override.js"],
+      "run_at" : "document_start"
+    }
+  ],
+    "web_accessible_resources": [
+    "bg-hatchlines.png",
+    "bg-noise.png",
+    "bg-site.png",
+    "script/double-rainbow.js",
+    "sprites.png",
+    "wmd-buttons.png"
+  ]
+
+}
