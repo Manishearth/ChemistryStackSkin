@@ -1273,10 +1273,12 @@ tr.comment:hover {
     text-decoration: none;
     width: 400px;
 }
-#hlogo a .beta-title {
+/*COMM
+ * 
+ * #hlogo a .beta-title {
     color: #8fd8f6;
     font-weight: normal;
-}
+}*/
 #hlinks {
     float: left;
     margin: 4px 37px 0 0;
@@ -7002,15 +7004,57 @@ input[type="button"]:disabled, input[type="submit"]:disabled {
 
 /*   MANISHS MODS */
 
-#content #mainbar, #content #sidebar .module {background-color:white;opacity:0.9;border: 10px solid rgba(255, 255, 255 , 0.9);}
-#content #mainbar div,#sidebar .module * {opacity:1}
+#content #mainbar, #content #sidebar .module {border-radius: 15px;background-color:white;opacity:0.9;border: 10px solid rgba(255, 255, 255 , 0.9);}
+#content #mainbar div,#sidebar .module *{opacity:1}
+
+#question-header{border-radius: 15px;padding:3px;background-color:white;opacity:0.9;border-top:2px solid rgba(255, 255, 255 , 0.9);border-bottom:2px solid rgba(255, 255, 255 , 0.9);border-left:2px solid rgba(255, 255, 255 , 0.9);border-right:2px solid rgba(255, 255, 255 , 0.9);}
+#question-header h1 {padding:0px;}
 
 #hsearch .textbox{border: 1px solid rgba(255, 255, 255, 0.1);background: rgba(255, 255, 255, 0.3);color: white;}
 #hsearch .textbox:active{background: rgba(255, 255, 255, 0.5);}
+#content{border: 40px solid rgba(255, 255, 255 , 0);}
+#hlogo a{padding-left:190px;line-height:90px;vertical-align:middle;}
+#hlogo{
+    vertical-align:middle;
+    position:absolute;
+   /*background-color: transparent;*/
+   background-image:url('chrome-extension://__MSG_@@extension_id__/jelly.png'); background-repeat:no-repeat;
+    background-size: 180px;
+    height:180px;
+    width:400px;
+    display:table-cell;
+    line-height:90px;
+}
+#hmenus{padding-top:30px;color: #7CFAFF;}
+#hmenus a{color: #7CFAFF;}
+#hlogo a .beta-title {
 
-#hlogo a{visibility:hidden}
-#hlogo{background-image:url('chrome-extension://__MSG_@@extension_id__/jelly.png'); background-repeat:no-repeat;}
+font-weight: normal;
+color: white;
+text-shadow: 0 3px 0 #222;
+}
+#hlogo a  {
+font-size: 30px;
+text-shadow: 0 1px 0 #7CFAFF;
+color:red;
+}
+.answered-accepted{
+    background-color:white;
+    background-image:url('chrome-extension://__MSG_@@extension_id__/benzeneaccept.png'); background-repeat:no-repeat;
+color: #286A4C;
+text-shadow: 0 0 3px #00CC6F;
+}
+/*
+#hlogo::before {
+   content: " ";
+   position: absolute;
+   width: 252px;
+   height: 169px;
+   z-index: 1;
+   background-image:url('chrome-extension://__MSG_@@extension_id__/jelly.png'); background-repeat:no-repeat;
 
+   
+}*/
 #hlinks a:visited {
 color: #7CFAFF;
 }
@@ -7018,3 +7062,5 @@ color: #7CFAFF;
 color: #7CFAFF;
 text-shadow: 0 1px 0 #222;
 }
+#sidebar{width:235px}
+#content{width:995px}
