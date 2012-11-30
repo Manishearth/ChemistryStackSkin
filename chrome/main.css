@@ -1201,7 +1201,9 @@ tr.comment:hover {
     width: 100%;
     zoom: 1;
     border-bottom: 1px solid #e2e2e2;
-    background: #fdfdfd url('chrome-extension://__MSG_@@extension_id__/bg-site.png') repeat-x top center;
+    background-image:url('chrome-extension://__MSG_@@extension_id__/bg-site.png'),url('chrome-extension://__MSG_@@extension_id__/bg-noise.png') ;
+    background-position:top center,top center;
+    background-repeat: repeat-x, repeat-y; 
 }
 #content {
     min-height: 450px;
@@ -4127,7 +4129,7 @@ td.question-info img {
     float: right;
 }
 #promo-box #promo-facebook, #promo-box #promo-email, #promo-box #promo-twitter, #promo-box #promo-gplus {
-    background-image: url('sprites.png');
+    background-image: url('chrome-extension://__MSG_@@extension_id__/sprites.png');
     background-repeat: no-repeat;
     overflow: hidden;
     background-color: transparent;
@@ -6995,4 +6997,24 @@ input[type="button"]:disabled, input[type="submit"]:disabled {
 }
 .adzerk-vote-cancel {
     color: #FF9A1E !important;
+}
+
+
+/*   MANISHS MODS */
+
+#content #mainbar, #content #sidebar .module {background-color:white;opacity:0.9;border: 10px solid rgba(255, 255, 255 , 0.9);}
+#content #mainbar div,#sidebar .module * {opacity:1}
+
+#hsearch .textbox{border: 1px solid rgba(255, 255, 255, 0.1);background: rgba(255, 255, 255, 0.3);color: white;}
+#hsearch .textbox:active{background: rgba(255, 255, 255, 0.5);}
+
+#hlogo a{visibility:hidden}
+#hlogo{background-image:url('chrome-extension://__MSG_@@extension_id__/jelly.png'); background-repeat:no-repeat;}
+
+#hlinks a:visited {
+color: #7CFAFF;
+}
+#hlinks a {
+color: #7CFAFF;
+text-shadow: 0 1px 0 #222;
 }
