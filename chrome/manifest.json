@@ -6,7 +6,7 @@
   "content_scripts": [
     {
       "matches": ["http://chemistry.stackexchange.com/*"],
-      "css": ["main.css"],
+  /*    "css": ["main.css"],*/
       "js": ["override.js"],
       "run_at" : "document_start"
     }
@@ -20,7 +20,8 @@
     "wmd-buttons.png",
     "jelly.png",
     "favicon.ico",
-    "benzeneaccept.png"
+    "benzeneaccept.png",
+    "main.css"
   ]
 
 }

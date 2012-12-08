@@ -5,7 +5,16 @@ String.prototype.endsWith = function(pattern) {
 
 document.addEventListener('beforeload', function(event) {
     
-if (event.url.indexOf("/chemistry/all.css")!=-1){/*alert(event.url);event.srcElement.src=chrome.extension.getURL("main.css");*/ event.preventDefault();}
+if (event.url.indexOf("/chemistry/all.css")!=-1){/*alert(event.url);event.srcElement.src=chrome.extension.getURL("main.css");*/ event.preventDefault();
+   var head  = document.getElementsByTagName('head')[0];
+    var link  = document.createElement('link');
+    link.rel  = 'stylesheet';
+    link.type = 'text/css';
+    link.href = chrome.extension.getURL("main.css");
+    link.media = 'all';
+    head.appendChild(link);
+
+}
 if (event.url.indexOf("/chemistry/img/favicon.ico")!=-1){event.preventDefault();(function() {
     var link = document.createElement('link');
     link.type = 'image/x-icon';

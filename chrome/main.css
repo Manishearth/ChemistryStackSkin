@@ -1402,6 +1402,7 @@ tr.comment:hover {
     margin: 12px 0 60px 0;
     width: 220px;
     padding-left: 5px;
+    z-index:1;
 }
 #mainbar, .mainbar {
     float: left;
@@ -1710,13 +1711,13 @@ div.user-stats-table table.summary-title {
 .answered {
     color: #4c9067;
 }
-.answered-accepted {
+/*.answered-accepted {
     color: #4c9067;
     background-color: #e4f9d3;
     border-bottom: 1px solid #fff!important;
     border-top: 1px solid #d9eec8!important;
     text-shadow: 0 1px 0 rgba(255,  255,  255,  0.6);
-}
+}*/
 .unanswered {
     color: #222;
 }
@@ -7005,12 +7006,13 @@ input[type="button"]:disabled, input[type="submit"]:disabled {
 
 /*   MANISHS MODS */
 
-#content #mainbar, #content #sidebar .module,#mainbar-full ,#content>.mainbar-full,.reviewable-post{border-radius: 15px;background-color:white;opacity:0.9;border: 10px solid rgba(255, 255, 255 , 0.9);}
-#content #mainbar div,#sidebar .module *,#mainbar-full *,#content>.mainbar-full *{opacity:1}
+#content #mainbar, #content #sidebar .module,#mainbar-full ,#content>div:not(#sidebar):not([itemscope]) {z-index:1 !important;border-radius: 15px;background-color:rgba(255,255,255,0.9);border: 10px solid rgba(255, 255, 255 , 0.9);}
+#content #mainbar div,#sidebar .module *,#mainbar-full *,#content>.mainbar-full * #content>div *{opacity:1}
 .reviewable-post{margin-top:30px}
-#question-header{border-radius: 15px;padding:3px;background-color:white;opacity:0.9;border-top:2px solid rgba(255, 255, 255 , 0.9);border-bottom:2px solid rgba(255, 255, 255 , 0.9);border-left:2px solid rgba(255, 255, 255 , 0.9);border-right:2px solid rgba(255, 255, 255 , 0.9);}
+/*.module{z-index:0 !important;}*/
+#question-header{border-radius: 15px;padding:3px;background-color:rgba(255,255,255,1);border-top:2px solid rgba(255, 255, 255 , 0.9);border-bottom:2px solid rgba(255, 255, 255 , 0.9);border-left:2px solid rgba(255, 255, 255 , 0.9);border-right:2px solid rgba(255, 255, 255 , 0.9);}
 #question-header h1 {padding:0px;}
-
+/*.popup{z-index:1000 !important;opacity:1 !important;}*/
 #hsearch .textbox{border: 1px solid rgba(255, 255, 255, 0.1);background: rgba(255, 255, 255, 0.3);color: white;border-radius:15px}
 #hsearch .textbox:active{background: rgba(255, 255, 255, 0.5);color: white;}
 #content{border: 40px solid rgba(255, 255, 255 , 0);}
@@ -7021,7 +7023,7 @@ input[type="button"]:disabled, input[type="submit"]:disabled {
    /*background-color: transparent;*/
    background-image:url('chrome-extension://__MSG_@@extension_id__/jelly.png'); background-repeat:no-repeat;
     background-size: 180px;
-    height:180px;
+    height:120px;
     width:400px;
     display:table-cell;
     line-height:90px;
@@ -7044,11 +7046,23 @@ opacity:0.9;
 }
 .youarehere,.youarehere a{color:#F35D5F;}
 .answered-accepted{
-    background-color:white;
+    background-color:rgb(255,255,255,0.9);
     background-image:url('chrome-extension://__MSG_@@extension_id__/benzeneaccept.png'); background-repeat:no-repeat;
 color: #286A4C;
 text-shadow: 0 0 3px #00CC6F;
 }
+
+.mini-counts.answered-accepted,.answer-votes.answered-accepted.default
+{
+
+    background-image:url('chrome-extension://__MSG_@@extension_id__/benzeneaccept.png'); background-repeat:no-repeat;
+    background-size: 100%;
+color: #286A4C;
+text-shadow: 0 0 3px #00CC6F;
+    background-color:rgb(255,255,255,0.9);
+}
+.count-cell(.mini-counts.answered-accepted){
+    background-color:white;}
 /*
 #hlogo::before {
    content: " ";
@@ -7063,9 +7077,54 @@ text-shadow: 0 0 3px #00CC6F;
 #hlinks a:visited {
 color: #7CFAFF;
 }
-#hlinks a {
+#hlinks a {ww
 color: #7CFAFF;
 text-shadow: 0 1px 0 #222;
 }
 #sidebar{width:235px}
 #content{width:995px}
+
+
+input[type="button"]:disabled, input[type="submit"]:disabled {
+opacity: 0.3 !important;
+filter: alpha(opacity=30)!important;
+}
+input[type="submit"]:hover, input[type="button"]:hover, input[type="submit"]:focus, input[type="button"]:focus {
+background: #F88912;
+-moz-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3),0 2px 0 rgba(255, 255, 255, 0.15) inset;
+-webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3),0 2px 0 rgba(255, 255, 255, 0.15) inset;
+box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3),0 2px 0 rgba(255, 255, 255, 0.15) inset;
+}
+input[type="button"], input[type="submit"] {
+cursor: pointer;
+}
+input[type="submit"], input[type="button"] {
+font-family: 'Helvetica Neue',Arial,sans-serif;
+font-weight: bold;
+display: inline-block;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+padding: 0.3em 0.7em;
+-moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2),0 2px 0 rgba(255, 255, 255, 0.15) inset;
+-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2),0 2px 0 rgba(255, 255, 255, 0.15) inset;
+box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2),0 2px 0 rgba(255, 255, 255, 0.15) inset;
+color: white;
+border: 1px solid #C47B07;
+background: linear-gradient(top, #FBA00C, #F67C16);
+background: -webkit-gradient(linear, left top, left bottom, from(#FBA00C), to(#F67C16));
+background: -moz-linear-gradient(top, #FBA00C, #F67C16);
+background: -o-linear-gradient(top, #FBA00C, #F67C16);
+background: linear-gradient(top, #FBA00C, #F67C16);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fba00c', endColorstr='#f67c16');
+font-size: 1em;
+line-height: 1.5;
+-moz-border-radius: 6px;
+-webkit-border-radius: 6px;
+border-radius: 6px;
+text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.deleted-answer {
+background-color: #F4BBBB;
+}
