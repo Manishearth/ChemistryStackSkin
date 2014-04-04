@@ -5,8 +5,9 @@ String.prototype.endsWith = function(pattern) {
 
 document.addEventListener('beforeload', function(event) {
     
-if (event.url.indexOf("/chemistry/all.css")!=-1){/*alert(event.url);event.srcElement.src=chrome.extension.getURL("main.css");*/ event.preventDefault();
-   var head  = document.getElementsByTagName('head')[0];
+if (event.url.indexOf("/chemistry/all.css")!=-1){
+    event.preventDefault();
+    var head  = document.getElementsByTagName('head')[0];
     var link  = document.createElement('link');
     link.rel  = 'stylesheet';
     link.type = 'text/css';
