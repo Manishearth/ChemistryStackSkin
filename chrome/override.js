@@ -16,13 +16,16 @@ if (event.url.indexOf("/chemistry/all.css")!=-1){
     head.appendChild(link);
 
 }
-if (event.url.indexOf("/chemistry/img/favicon.ico")!=-1){event.preventDefault();(function() {
-    var link = document.createElement('link');
-    link.type = 'image/x-icon';
-    link.rel = 'shortcut icon';
-    link.href = chrome.extension.getURL('favicon.ico');
-    document.getElementsByTagName('head')[0].appendChild(link);
-}());}
+if (event.url.indexOf("/chemistry/img/favicon.ico")!=-1){
+    event.preventDefault();
+    (function() {
+      var link = document.createElement('link');
+      link.type = 'image/x-icon';
+      link.rel = 'shortcut icon';
+      link.href = chrome.extension.getURL('favicon.ico');
+      document.getElementsByTagName('head')[0].appendChild(link);
+   }());
+}
 
 
 
